@@ -21,3 +21,16 @@ class CommandTests(SimpleTestCase):
         call_command('wait_for_db')
 
         patch_check.assert_called_once_with(databases=['default']) # test if the command is called with this database
+
+    @patch('time.sleep')
+    def test_wait_for_db_delay(self,patch_sleep,patch_check):
+        """test waiting for database when getting OperationalError"""
+        patch_check.side_effect = [Psycopg2Error]*2+ [OperationalError]*2+[True]#first two  times call Psycopg2Error
+
+        call_command('wait_for_db')
+
+        self.assertEqual(patch_check.call_count,6) #test if the database was called 6 times
+
+        patch_check.assert_called_with(databases=['default'])
+
+

@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.10.6 virtualenv at C:\Users\daniel\Desktop\Projects\Python\django4venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10.3 virtualenv at C:\Users\Pc\Desktop\Python\django4venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
