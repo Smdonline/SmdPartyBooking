@@ -14,11 +14,11 @@ class Command(BaseCommand):
         """Entrypoint for command"""
         self.stdout.write("wait for database ......")
         db_up = False
-        while not db_up:
+        while db_up is False:
             try:
                 self.check(databases=['default'])
                 db_up = True
             except (Psyposg2Error, OperationalError):
-                self.stdout.write("database unavailable wait 1 seccond")
+                self.stdout.write("database unavailable wait 1 second")
                 time.sleep(1)
         self.stdout.write(self.style.SUCCESS("Database available"))
